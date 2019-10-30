@@ -379,3 +379,31 @@ def update(id):
         <input type="submit" value="Update">
     </form>
 ```
+
+24. Add `if` statement to `index.html` to account for no tasks
+
+```html
+    <h1>Task Master</h1>
+    {% if tasks|length < 1 %}
+        <h4>There are no tasks. Create one below!</h4>
+    {% else %}
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Added</th>
+            <th>Actions</th>
+        </tr>
+        {% for task in tasks%}
+            <tr>
+                <td>{{ task.content }}</td>
+                <td>{{ task.date_created.date() }}</td>
+                <td>
+                    <a href="/delete/{{ task.id }}">Delete</a>
+                    <br>
+                    <a href="/update/{{ task.id }}">Update</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+```

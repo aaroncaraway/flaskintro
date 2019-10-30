@@ -407,3 +407,39 @@ def update(id):
     </table>
     {% endif %}
 ```
+## PUSH IT LIVE!!
+
+25. Sign up for / sign in to Heroku
+
+26. Install Heroku [cli](https://devcenter.heroku.com/articles/heroku-cli)
+
+27. Login via cli & create heroku app
+```
+heroku login
+```
+
+28. Freeze Requirements
+```console
+pip3 install gunicorn
+pip3 freeze > requirements.txt
+```
+
+29. OH WAIT ADD PROCFILE
+This starts a webserver and tells webserver what to run
+``` console
+touch Procfile
+```
+
+Procfile
+```console
+web: gunicorn app:app
+```
+
+30. Create Heroku app and GIT IT
+``` console
+heroku create
+git add .
+git commit -m "WHEE FLASK!"
+git push heroku master
+heroku open
+```

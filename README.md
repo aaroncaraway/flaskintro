@@ -142,7 +142,7 @@ def index():
     # return "Hello, world!"
     return render_template('index.html')
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)
 ```
 NOTE: sqlite:///
